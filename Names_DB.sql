@@ -20,3 +20,15 @@ CREATE TABLE state_names (
 	name VARCHAR(255) NOT NULL,
 	count INT NOT NULL
 );
+
+SELECT * FROM state_names LIMIT 100;
+SELECT state, MAX(count) FROM state_names GROUP BY state;
+
+CREATE VIEW top_names_state AS
+SELECT s.state, s.name, s.year, s.count FROM state_names s
+INNER JOIN (SELECT state, MAX(count) FROM state_names GROUP BY state) g
+ON g.state = s.state and s.count = g.max;
+
+SELECT * FROM top_names_state;
+
+
