@@ -9,7 +9,6 @@ CREATE TABLE nat_names (
 	name VARCHAR(255) NOT NULL, 
 	sex VARCHAR(1) NOT NULL,
 	count INT NOT NULL,
-	source VARCHAR(255) NOT NULL,
 	year INT NOT NULL
 );
 
